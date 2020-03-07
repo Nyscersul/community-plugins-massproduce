@@ -81,7 +81,7 @@ class HumanState():
 
     def _pickOneFromArray(self, values):
         num = len(values)
-                if num <= 1:
+        if num <= 1:
             pickedVal = 0;
         else:
             pickedVal = random.randrange(num)
