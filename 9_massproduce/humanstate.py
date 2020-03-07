@@ -70,14 +70,22 @@ class HumanState():
     def _pickOne(self, valuesHash, modifierList):
         for n in modifierList:
             valuesHash[n] = 0.0
-        num = len(modifierList)
-        pickedVal = random.randrange(num)
+        num = len(modifierList)        
+        if num <= 1:
+            pickedVal = 0;
+        else:
+            pickedVal = random.randrange(num)
+        
         pickedName = modifierList[pickedVal]
         valuesHash[pickedName] = 1.0
 
     def _pickOneFromArray(self, values):
         num = len(values)
-        pickedVal = random.randrange(num)
+                if num <= 1:
+            pickedVal = 0;
+        else:
+            pickedVal = random.randrange(num)
+        
         return values[pickedVal]
 
     def _dichotomous(self, valuesHash, modifierList):
